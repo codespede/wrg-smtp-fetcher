@@ -60,14 +60,14 @@ class EmailsSearch extends Emails
         }
 
         // grid filtering conditions
-        $query->andFilterWhere(['REGEXP', 'id', strval($this->id ) ]);
-        $query->andFilterWhere(['REGEXP', 'from', strval($this->from ) ]);
-        $query->andFilterWhere(['REGEXP', 'to', strval($this->to ) ]);
-        $query->andFilterWhere(['REGEXP', 'body', strval($this->body ) ]);
-        $query->andFilterWhere(['REGEXP', 'uid', strval($this->uid ) ]);
-        $query->andFilterWhere(['REGEXP', 'msgNo', strval($this->msgNo ) ]);
-        $query->andFilterWhere(['REGEXP', 'dateSent', strval($this->dateSent ) ]);
-        $query->andFilterWhere(['REGEXP', 'subject', strval($this->subject ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(id)', strval($this->id ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(from)', strval($this->from ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(to)', strval($this->to ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(body)', strval($this->body ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(uid)', strval($this->uid ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(msgNo)', strval($this->msgNo ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(dateSent)', strval($this->dateSent ) ]);
+        $query->andFilterWhere(['REGEXP', 'LOWER(subject)', strval($this->subject ) ]);
 
         $searchParams = [];
         $searching = false;
